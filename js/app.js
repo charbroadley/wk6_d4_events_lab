@@ -3,27 +3,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const form = document.querySelector("#new-item-form")
   form.addEventListener('submit', (evt) => {
-    // document.getElementById("new-item-form").reset();
-    evt.preventDefault()
-    const readingList = document.querySelector("#reading-list")
     
-    const list = document.querySelector("ul")
+    evt.preventDefault()
+
+    const readingList = document.querySelector("ul")
     //create new li
-    const newListItem = document.createElement("li")
+    const readingListItem = document.createElement("li")
+    // add a class to the li for css later
+
     //set text content of li to content from form
-    newListItem.textContent = `
+    readingListItem.textContent = `
     ${evt.target.title.value}
     ${evt.target.author.value}
     ${evt.target.category.value}` 
     //add li to ul using appendChild
-    list.appendChild(newListItem)
-    console.log(list)
+    readingList.appendChild(newListItem)
+    // console.log(list)
+    // to reset the whole form after the info has been appended to the list
     evt.target.reset()
   })
 
-  const newButton = document.createElement("button")
-   = document.querySelector("li")
-  
+  // BUTTON
+  // add a button to the html
+  // add eventListener "click"
+  // const readingList = querySelector ("#reading-list")
+  // readingList.innerHTML = ""
   
 })
+
+// to help improve accessibility and SEO:
+// create an li, inside the li:
+//    -> create a h2 (title)
+//      ->  create a h3 (author)
+//          -> create a p (categore)
+
+
+// functions: 
+// Create reading list item. Inside this functions to create h2, h and p. Create reading list item returns all these things.
+
+
+// createReadingListItem
+// querySelector ('#reading-list)
+// appendChild
 
